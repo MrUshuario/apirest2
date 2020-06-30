@@ -9,12 +9,26 @@ const port = process.env.PORT || 3000; // lo que sea que este en PORT o 3000 por
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json()); //admitir el formato json
 
+////// AQUI MODIFICAR SEGUN MI CASO ///////
 
-app.get('/hola/:name', (req, res) => {
-res.send({ message: `hola ${req.params.name}!`})
+app.get('/api/product', (req, res) => {
+res.send(200, { products: []})
 });
 
+app.get('/api/product/:productId', (req, res) => {
 
+});
+
+app.post('/api/product', (req, res) => {
+console.log(req.body)
+res.status(200).send({message: 'El producto se ha recibido'})
+});
+
+app.put('/api/product/:productId', (req,res) => {
+
+});
+
+////////////
 app.listen(port, () => {
 console.log(`API REST corriendo en http://localhost:${port}`)
 });
