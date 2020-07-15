@@ -16,11 +16,25 @@
 <table class="table table-striped">
 <tr>
  <th>ID</th>
- <th>TITLE</th>
- <th>NEWS</th>
+ <th>Fecha</th>
+ <th>Hora</th>
+ <th>Paciente</th>
+ <th>Medico</th>
+ <th>Estado</th>
+ <th>Observaciones</th>
 </tr>
 
-
+<% for(var i = 0; i < citas.length; i++) { %>
+<tr>
+<td><%= citas[i].idcita %></td>
+<td><%= citas[i].citfecha %></td>
+<td><%= citas[i].cithora %></td>
+<td><%= citas[i].citPaciente %></td>
+<td><%= citas[i].citMedico %></td>
+<td><%= citas[i].citestado %></td>
+<td><%= citas[i].citobservaciones %></td>
+</tr>
+<% } %> 
 
 </table>
 </div>
